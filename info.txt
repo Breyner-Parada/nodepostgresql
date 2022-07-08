@@ -1,0 +1,37 @@
+ORM
+💡Un ORM es un modelo de programación que permite mapear las estructuras de una base de datos relacionales.
+
+.
+Al abstraer este tipo de programación, delegamos su implementación al backend, es decir, le añadimos una de responsabilidad a la capa transaccional del servidor:
+.
+✨Los beneficios son los siguientes:
+
+Acciones como CRUD (Create, Read, Update, Delete) son administradas mediante ORM.
+La implementación de seeds o semillas, nos permiten recuperar, mediante código, la estructura de una BD.
+.
+Una de las bases teóricas para entender este modelo es mediante el conocimiento de DAO (Data Access Object) y DTO (Data Transfer Object), los cuales nos permiten desestructurar un ORM en módulos de abstracción para acceder a la DB y transferir datos desde la misma DB, respectivamente hablando.
+.
+🙃Los contras sería:
+
+Delegación de responsabilidades al server
+Descentralización de trabajo, directa, de una BD.
+
+
+
+Las migraciones son:
+
+Las migraciones son la forma en que Django propaga cambios en los modelos y los refleja en el esquema de bases de datos. - Django.
+
+Las migraciones son como un sistema de control de versiones para la base de datos. - Laravel.
+
+Es como un sistema de control de versiones para manejar los cambios desde el código y trackear los cambios en la base de datos. - Sequelize.
+
+Básicamente, las migraciones mantienen el historial del esquema que se lleva en la base de datos. Es un sistema muy usado en ambientes de producción para trackear los cambios sin tener que replicar todo nuevamente (creación de tablas, llaves foráneas, etc). Es decir, permite saber en qué punto estaba para saber qué es lo que se tiene que modificar.
+
+–
+
+sequelize.sync() empieza a leer los modelos, crea tablas y hace relist (se sobrescribe información), no se aconseja que se corra en producción. Es mejor sincronizar con un sistema de migraciones.
+
+Para correr migraciones se utiliza la librería sequelize-cli y se instala como dependencia de desarrollo con el comando npm i sequelize-cli -D.
+
+Posteriormente, se crea un archivo de configuración .sequelizerc en la carpeta principal.
